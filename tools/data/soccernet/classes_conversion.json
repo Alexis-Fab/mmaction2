@@ -1,0 +1,11 @@
+{
+  "classes": [ "Penalty", "Goal", "Shot", "FreeKick", "Corner", "YellowCard", "RedCard", "Foul" ],
+  "conversion": {
+    "Shots on target": "Shot",
+    "Shots off target": "Shot",
+    "Direct free-kick": "FreeKick",
+    "Yellow->red card": "RedCard",
+    "Yellow card": "YellowCard",
+    "Red card": "RedCard"
+  }
+}

@@ -1,0 +1,24 @@
+{
+    "events":
+    {
+        "0": "Background",
+        "1": "Injured",
+        "2": "Red/Yellow Card",
+        "3": "Shot",
+        "4": "Substitution",
+        "5": "FreeKick",
+        "6": "Corner",
+        "7": "Saves",
+        "8": "Penalty",
+        "9": "Foul",
+        "10": "Goal"
+    },
+
+    "highlights":
+    {
+        "0": "Not highlight",
+        "1": "Playback",
+        "2": "Segments that are played back",
+        "3": "Goal"
+    }
+}

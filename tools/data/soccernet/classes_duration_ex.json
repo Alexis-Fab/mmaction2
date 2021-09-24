@@ -1,0 +1,42 @@
+{
+  "Penalty": 
+  {
+  	"anticipation": 6,
+  	"duration": 8
+  },
+  "Goal":
+  {
+  	"anticipation": 1,
+  	"duration": 6
+  },
+  "Shot":
+  {
+  	"anticipation": 0,
+  	"duration": 3
+  },
+  "FreeKick":
+  {
+  	"anticipation": 5,
+  	"duration": 7
+  },
+  "Corner":
+  {
+  	"anticipation": 4,
+  	"duration": 7
+  },
+  "YellowCard":
+  {
+  	"anticipation": 1,
+  	"duration": 3
+  },
+  "RedCard":
+  {
+  	"anticipation": 1,
+  	"duration": 4
+  },
+  "Foul":
+  {
+  	"anticipation": 0,
+  	"duration": 4
+  }
+}
