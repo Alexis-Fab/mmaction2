@@ -13,7 +13,11 @@ from tools.data.parse_file_list import (parse_directory, parse_diving48_splits,
                                         parse_kinetics_splits,
                                         parse_mit_splits, parse_mmit_splits,
                                         parse_sthv1_splits, parse_sthv2_splits,
+<<<<<<< HEAD
                                         parse_ucf101_splits, parse_soccernet_splits)
+=======
+                                        parse_ucf101_splits)
+>>>>>>> c088cb419e364e37bd6cb7e9b0b87f840ba817d2
 
 
 def parse_args():
@@ -24,7 +28,11 @@ def parse_args():
         choices=[
             'ucf101', 'kinetics400', 'kinetics600', 'kinetics700', 'thumos14',
             'sthv1', 'sthv2', 'mit', 'mmit', 'activitynet', 'hmdb51', 'jester',
+<<<<<<< HEAD
             'diving48', 'soccernet'
+=======
+            'diving48'
+>>>>>>> c088cb419e364e37bd6cb7e9b0b87f840ba817d2
         ],
         help='dataset to be built file list')
     parser.add_argument(
@@ -82,7 +90,10 @@ def parse_args():
         default=False,
         help='whether to shuffle the file list')
     args = parser.parse_args()
+<<<<<<< HEAD
     print(args)
+=======
+>>>>>>> c088cb419e364e37bd6cb7e9b0b87f840ba817d2
 
     return args
 
@@ -116,10 +127,17 @@ def build_file_list(splits, frame_info, shuffle=False):
         for item in split:
             if item[0] not in frame_info:
                 continue
+<<<<<<< HEAD
             if frame_info[item[0]][1] > 1:
                 # rawframes
                 rgb_cnt = frame_info[item[0]][1]-1
                 flow_cnt = frame_info[item[0]][2]-1
+=======
+            if frame_info[item[0]][1] > 0:
+                # rawframes
+                rgb_cnt = frame_info[item[0]][1]
+                flow_cnt = frame_info[item[0]][2]
+>>>>>>> c088cb419e364e37bd6cb7e9b0b87f840ba817d2
                 if isinstance(item[1], int):
                     rgb_list.append(f'{item[0]} {rgb_cnt} {item[1]}\n')
                     flow_list.append(f'{item[0]} {flow_cnt} {item[1]}\n')
@@ -211,19 +229,30 @@ def main():
         splits = parse_jester_splits(args.level)
     elif args.dataset == 'diving48':
         splits = parse_diving48_splits()
+<<<<<<< HEAD
     elif args.dataset == 'soccernet':
         splits = parse_soccernet_splits(args.level)
     else:
         raise ValueError(
             f"Supported datasets are 'ucf101, sthv1, sthv2', 'jester', "
             f"'mmit', 'mit', 'kinetics400', 'kinetics600', 'kinetics700', 'soccernet', but "
+=======
+    else:
+        raise ValueError(
+            f"Supported datasets are 'ucf101, sthv1, sthv2', 'jester', "
+            f"'mmit', 'mit', 'kinetics400', 'kinetics600', 'kinetics700', but "
+>>>>>>> c088cb419e364e37bd6cb7e9b0b87f840ba817d2
             f'got {args.dataset}')
 
     assert len(splits) == args.num_split
 
     out_path = args.out_root_path + args.dataset
 
+<<<<<<< HEAD
     if len(splits) >= 1:
+=======
+    if len(splits) > 1:
+>>>>>>> c088cb419e364e37bd6cb7e9b0b87f840ba817d2
         for i, split in enumerate(splits):
             file_lists = build_file_list(
                 split, frame_info, shuffle=args.shuffle)

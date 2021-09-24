@@ -31,7 +31,11 @@ model = dict(
     cls_head=dict(
         type='SlowFastHead',
         in_channels=2304,  # 2048+256
+<<<<<<< HEAD
         num_classes=8,
+=======
+        num_classes=400,
+>>>>>>> c088cb419e364e37bd6cb7e9b0b87f840ba817d2
         spatial_type='avg',
         dropout_ratio=0.5),
     # model training and testing settings

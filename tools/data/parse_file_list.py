@@ -67,7 +67,11 @@ def parse_directory(path,
         total_num = count_files(frame_dir,
                                 (rgb_prefix, flow_x_prefix, flow_y_prefix))
         dir_name = locate_directory(frame_dir)
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> c088cb419e364e37bd6cb7e9b0b87f840ba817d2
         num_x = total_num[1]
         num_y = total_num[2]
         if num_x != num_y:
@@ -533,6 +537,7 @@ def parse_diving48_splits():
 
     splits = ((train_list, test_list), )
     return splits
+<<<<<<< HEAD
 
 
 def parse_soccernet_splits(level):
@@ -588,3 +593,5 @@ def parse_soccernet_splits(level):
         splits.append((train_list, val_list, test_list))
 
     return splits
+=======
+>>>>>>> c088cb419e364e37bd6cb7e9b0b87f840ba817d2

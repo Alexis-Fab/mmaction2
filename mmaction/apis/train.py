@@ -13,7 +13,10 @@ from ..core import (DistEvalHook, EvalHook, OmniSourceDistSamplerSeedHook,
 from ..datasets import build_dataloader, build_dataset
 from ..utils import PreciseBNHook, get_root_logger
 from .test import multi_gpu_test
+<<<<<<< HEAD
 from .test import single_gpu_test
+=======
+>>>>>>> c088cb419e364e37bd6cb7e9b0b87f840ba817d2
 
 
 def train_model(model,
@@ -148,7 +151,11 @@ def train_model(model,
             # cfg.gpus will be ignored if distributed
             num_gpus=len(cfg.gpu_ids),
             dist=distributed,
+<<<<<<< HEAD
             shuffle=True)
+=======
+            shuffle=False)
+>>>>>>> c088cb419e364e37bd6cb7e9b0b87f840ba817d2
         dataloader_setting = dict(dataloader_setting,
                                   **cfg.data.get('val_dataloader', {}))
         val_dataloader = build_dataloader(val_dataset, **dataloader_setting)
@@ -212,7 +219,12 @@ def train_model(model,
             if ckpt is not None:
                 runner.load_checkpoint(ckpt)
 
+<<<<<<< HEAD
             outputs = single_gpu_test(runner.model, test_dataloader)
+=======
+            outputs = multi_gpu_test(runner.model, test_dataloader, tmpdir,
+                                     gpu_collect)
+>>>>>>> c088cb419e364e37bd6cb7e9b0b87f840ba817d2
             rank, _ = get_dist_info()
             if rank == 0:
                 out = osp.join(cfg.work_dir, f'{name}_pred.pkl')

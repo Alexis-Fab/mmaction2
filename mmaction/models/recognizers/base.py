@@ -35,7 +35,11 @@ class BaseRecognizer(nn.Module, metaclass=ABCMeta):
                  cls_head=None,
                  neck=None,
                  train_cfg=None,
+<<<<<<< HEAD
                  test_cfg=dict(average_clips='prob')):
+=======
+                 test_cfg=None):
+>>>>>>> c088cb419e364e37bd6cb7e9b0b87f840ba817d2
         super().__init__()
         # record the source of the backbone
         self.backbone_from = 'mmaction2'
@@ -297,7 +301,10 @@ class BaseRecognizer(nn.Module, metaclass=ABCMeta):
             assert item in data_batch
             aux_info[item] = data_batch[item]
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> c088cb419e364e37bd6cb7e9b0b87f840ba817d2
         losses = self(imgs, label, return_loss=True, **aux_info)
 
         loss, log_vars = self._parse_losses(losses)

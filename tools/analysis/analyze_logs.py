@@ -55,6 +55,7 @@ def plot_curve(log_dicts, args):
                     f'{args.json_logs[i]} does not contain metric {metric}')
             xs = []
             ys = []
+<<<<<<< HEAD
             xsVal = []
             ysVal = []
             if log_dict[epochs[0]]['mode'][-1] == 'val':
@@ -81,6 +82,19 @@ def plot_curve(log_dicts, args):
             plt.xlabel('iter')
             plt.plot(xs, ys, '#023e8a', label=legend[i * num_metrics + j], linewidth=0.5)
             plt.plot(xsVal, ysVal, '#e63946', label='val_'+legend[i * num_metrics + j], linewidth=0.9)
+=======
+            num_iters_per_epoch = log_dict[epochs[0]]['iter'][-1]
+            for epoch in epochs:
+                iters = log_dict[epoch]['iter']
+                if log_dict[epoch]['mode'][-1] == 'val':
+                    iters = iters[:-1]
+                xs.append(np.array(iters) + (epoch - 1) * num_iters_per_epoch)
+                ys.append(np.array(log_dict[epoch][metric][:len(iters)]))
+            xs = np.concatenate(xs)
+            ys = np.concatenate(ys)
+            plt.xlabel('iter')
+            plt.plot(xs, ys, label=legend[i * num_metrics + j], linewidth=0.5)
+>>>>>>> c088cb419e364e37bd6cb7e9b0b87f840ba817d2
             plt.legend()
         if args.title is not None:
             plt.title(args.title)
@@ -179,4 +193,8 @@ def main():
 
 
 if __name__ == '__main__':
+<<<<<<< HEAD
     main()
+=======
+    main()
+>>>>>>> c088cb419e364e37bd6cb7e9b0b87f840ba817d2

@@ -207,6 +207,7 @@ class BaseDataset(Dataset, metaclass=ABCMeta):
 
                 top_k_acc = top_k_accuracy(results, gt_labels, topk)
                 log_msg = []
+<<<<<<< HEAD
 
                 # valtopk = open('/home/opekta/copaeurope/mmaction2/data/soccernet/valtopk.txt',"a+")
 
@@ -219,6 +220,11 @@ class BaseDataset(Dataset, metaclass=ABCMeta):
                 # valtopk.write('\n')        
                 # valtopk.close()
 
+=======
+                for k, acc in zip(topk, top_k_acc):
+                    eval_results[f'top{k}_acc'] = acc
+                    log_msg.append(f'\ntop{k}_acc\t{acc:.4f}')
+>>>>>>> c088cb419e364e37bd6cb7e9b0b87f840ba817d2
                 log_msg = ''.join(log_msg)
                 print_log(log_msg, logger=logger)
                 continue

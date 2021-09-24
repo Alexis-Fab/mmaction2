@@ -223,8 +223,11 @@ class ResNet3dPathway(ResNet3d):
             state_dict_r2d = state_dict_r2d['state_dict']
 
         inflated_param_names = []
+<<<<<<< HEAD
         print('Here is state_dict_r2d:')
         print(state_dict_r2d)
+=======
+>>>>>>> c088cb419e364e37bd6cb7e9b0b87f840ba817d2
         for name, module in self.named_modules():
             if 'lateral' in name:
                 continue
@@ -245,7 +248,10 @@ class ResNet3dPathway(ResNet3d):
                     logger.warning(f'Module not exist in the state_dict_r2d'
                                    f': {original_conv_name}')
                 else:
+<<<<<<< HEAD
                     print("module found !")
+=======
+>>>>>>> c088cb419e364e37bd6cb7e9b0b87f840ba817d2
                     self._inflate_conv_params(module.conv, state_dict_r2d,
                                               original_conv_name,
                                               inflated_param_names)
@@ -253,7 +259,10 @@ class ResNet3dPathway(ResNet3d):
                     logger.warning(f'Module not exist in the state_dict_r2d'
                                    f': {original_bn_name}')
                 else:
+<<<<<<< HEAD
                     print("module found !")
+=======
+>>>>>>> c088cb419e364e37bd6cb7e9b0b87f840ba817d2
                     self._inflate_bn_params(module.bn, state_dict_r2d,
                                             original_bn_name,
                                             inflated_param_names)

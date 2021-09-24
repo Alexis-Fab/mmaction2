@@ -138,8 +138,11 @@ mmaction/tools/*
 # unignore ipython notebook files in demo
 !demo/*.ipynb
 mmaction/.mim
+<<<<<<< HEAD
 
 # ignore large files
 /checkpoints
 /data
 !/data/*.txt
+=======
+>>>>>>> c088cb419e364e37bd6cb7e9b0b87f840ba817d2
