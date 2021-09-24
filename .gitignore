@@ -142,7 +142,7 @@ mmaction/.mim
 
 # ignore large files
 /checkpoints
-/data/*
+/data/soccernet/*.*
 !/data/soccernet/*.txt
 =======
 >>>>>>> c088cb419e364e37bd6cb7e9b0b87f840ba817d2
